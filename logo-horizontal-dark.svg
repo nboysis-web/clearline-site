@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 120" width="600" height="120">
+  <rect width="600" height="120" fill="#0a0e14"/>
+
+  <!-- Mark: precise geometric monogram - overlapping C bracket forming "CL" -->
+
+  <g transform="translate(40, 40)">
+    <!-- Outer bracket -->
+    <path d="M 0 0 L 0 40 L 30 40" stroke="#d4a574" stroke-width="2" fill="none" stroke-linecap="square"/>
+    <path d="M 0 0 L 30 0" stroke="#d4a574" stroke-width="2" fill="none" stroke-linecap="square"/>
+    <!-- Inner accent line -->
+    <line x1="10" y1="12" x2="22" y2="12" stroke="#d4a574" stroke-width="2"/>
+    <line x1="10" y1="20" x2="18" y2="20" stroke="#d4a574" stroke-width="2" opacity="0.5"/>
+    <line x1="10" y1="28" x2="22" y2="28" stroke="#d4a574" stroke-width="2"/>
+  </g>
+
+  <!-- Divider -->
+
+  <line x1="95" y1="50" x2="95" y2="70" stroke="#2a3142" stroke-width="1"/>
+
+  <!-- Wordmark -->
+
+  <text x="115" y="68" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="400" fill="#f5f3ee" letter-spacing="-0.5">
+    Clearline
+  </text>
+
+  <!-- Tagline -->
+
+  <text x="116" y="88" font-family="'Courier New', monospace" font-size="9" fill="#7a8599" letter-spacing="3" text-transform="uppercase">
+    R E V E N U E &#160;&#160; O P E R A T I O N S
+  </text>
+</svg>

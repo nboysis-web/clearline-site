@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Clearline RevOps -- Revenue Operations for Professional Services</title>
+<meta name="description" content="AI-powered RevOps audits and implementation for B2B professional services firms. Fix your revenue machine in 14 days."/>
+
+<!-- Open Graph / social previews -->
+
+<meta property="og:title" content="Clearline RevOps -- Fix your revenue machine."/>
+<meta property="og:description" content="AI-powered RevOps audits and implementation for B2B professional services firms."/>
+<meta property="og:image" content="og-image.svg"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://clearlinerevops.com"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="og-image.svg"/>
+
+<!-- Favicon -->
+
+<link rel="icon" type="image/svg+xml" href="icon-square.svg"/>
+
+<!-- Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+  :root {
+    --ink: #0a0e14;
+    --slate: #141925;
+    --slate-2: #1a2030;
+    --gold: #d4a574;
+    --gold-dark: #b8864a;
+    --fog: #7a8599;
+    --fog-light: #a8b2c4;
+    --parchment: #f5f3ee;
+    --line: 1px solid #1a2030;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(26,32,48,0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(26,32,48,0.4) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  main, nav, section, footer { position: relative; z-index: 2; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    border-bottom: var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(10,14,20,0.92);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+
+  .logo { height: 32px; display: flex; align-items: center; }
+  .logo img { height: 100%; width: auto; }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  nav a { color: var(--fog); text-decoration: none; transition: color 0.2s; }
+  nav a:hover { color: var(--parchment); }
+
+  .nav-cta {
+    background: transparent;
+    color: var(--parchment) !important;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--gold); color: var(--ink) !important; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 85vh;
+    border-bottom: var(--line);
+  }
+
+  .hero-left {
+    padding: 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: var(--line);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(3rem, 5.5vw, 5.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  h1 em { font-style: italic; color: var(--gold); }
+
+  .hero-sub {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
+    color: var(--fog-light);
+    max-width: 42ch;
+    line-height: 1.55;
+    margin-bottom: 3rem;
+    font-style: italic;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    padding: 1rem 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+    font-weight: 500;
+  }
+
+  .btn-primary:hover { background: var(--parchment); transform: translateY(-1px); }
+
+  .btn-ghost {
+    color: var(--fog-light);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--slate-2);
+    padding-bottom: 4px;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+  .hero-right {
+    padding: 6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--slate);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: 'CLEARLINE';
+    position: absolute;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14rem;
+    opacity: 0.025;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    white-space: nowrap;
+    pointer-events: none;
+    color: var(--gold);
+  }
+
+  .stat-block {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(122,133,153,0.15);
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-block:first-child { padding-top: 0; }
+  .stat-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .stat-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fog);
+    max-width: 30ch;
+  }
+
+  .marquee-wrap {
+    border-top: var(--line);
+    border-bottom: var(--line);
+    overflow: hidden;
+    padding: 1.1rem 0;
+    background: var(--slate);
+  }
+
+  .marquee-inner {
+    display: flex;
+    gap: 4rem;
+    animation: marquee 32s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-inner span {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fog);
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .marquee-inner span::after {
+    content: '◆';
+    color: var(--gold);
+    font-size: 0.45rem;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .section { padding: 7rem 3rem; border-bottom: var(--line); }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label span { color: var(--fog); opacity: 0.5; }
+
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  h2 em { font-style: italic; color: var(--gold); }
+
+  .lead-para {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--fog-light);
+    max-width: 60ch;
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: var(--line);
+    margin-top: 4rem;
+  }
+
+  .problem-item {
+    padding: 3rem 2.5rem;
+    border-right: var(--line);
+    border-bottom: var(--line);
+    position: relative;
+    background: var(--slate);
+    transition: background 0.3s;
+  }
+
+  .problem-item:hover { background: #1d2332; }
+  .problem-item:nth-child(even) { border-right: none; }
+  .problem-item:nth-child(3), .problem-item:nth-child(4) { border-bottom: none; }
+
+  .problem-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+  .problem-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--parchment);
+    letter-spacing: -0.01em;
+  }
+
+  .problem-desc {
+    font-size: 0.82rem;
+    color: var(--fog-light);
+    line-height: 1.75;
+  }
+
+  .services-wrap { display: grid; grid-template-columns: 1fr 2fr; gap: 0; }
+
+  .services-sidebar { border-right: var(--line); padding-right: 3rem; }
+  .services-sidebar .lead-para { margin-top: 1.5rem; font-size: 1rem; }
+
+  .service-cards {
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .service-card {
+    border: var(--line);
+    background: var(--slate);
+    padding: 2.5rem;
+    margin-bottom: -1px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--gold);
+    transform: scaleY(0);
+    transition: transform 0.3s;
+    transform-origin: top;
+  }
+
+  .service-card:hover { background: #1d2332; }
+  .service-card:hover::after { transform: scaleY(1); }
+
+  .service-tag {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--ink);
+    border: 1px solid var(--slate-2);
+    padding: 0.35rem 0.7rem;
+    white-space: nowrap;
+    color: var(--gold);
+    margin-top: 0.3rem;
+  }
+
+  .service-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.015em;
+    color: var(--parchment);
+  }
+
+  .service-desc {
+    font-size: 0.82rem;
+    color: var(--fog-light);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .service-includes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+
+  .service-pill {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    border: 1px solid var(--slate-2);
+    padding: 0.25rem 0.65rem;
+    color: var(--fog);
+    text-transform: uppercase;
+  }
+
+  .service-price { text-align: right; white-space: nowrap; }
+
+  .price-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--gold);
+    letter-spacing: -0.02em;
+  }
+
+  .price-unit {
+    font-size: 0.62rem;
+    color: var(--fog);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.4rem;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: var(--line);
+    margin-top: 4rem;
+    background: var(--slate);
+  }
+
+  .process-step {
+    padding: 2.5rem 2rem;
+    border-right: var(--line);
+    position: relative;
+  }
+
+  .process-step:last-child { border-right: none; }
+
+  .step-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.5rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .step-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--parchment);
+  }
+
+  .step-desc {
+    font-size: 0.75rem;
+    color: var(--fog-light);
+    line-height: 1.75;
+  }
+
+  .step-time {
+    margin-top: 1.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 1rem;
+    border-top: 1px solid var(--slate-2);
+  }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .who-card {
+    border: var(--line);
+    padding: 2.5rem;
+    background: var(--slate);
+    transition: background 0.3s;
+  }
+
+  .who-card:hover { background: #1d2332; }
+
+  .who-icon {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  .who-type {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--parchment);
+    letter-spacing: -0.01em;
+  }
+
+  .who-desc {
+    font-size: 0.82rem;
+    color: var(--fog-light);
+    line-height: 1.75;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--fog-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text strong { color: var(--parchment); font-weight: 500; }
+
+  .about-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    border-left: 2px solid var(--gold);
+    padding-left: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cred-item {
+    font-size: 0.8rem;
+    color: var(--fog);
+    line-height: 1.6;
+  }
+
+  .cred-item strong {
+    display: block;
+    font-weight: 500;
+    color: var(--parchment);
+    margin-bottom: 0.3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .about-aside {
+    background: var(--slate);
+    border: var(--line);
+    padding: 3.5rem;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .aside-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  .aside-quote {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    color: var(--parchment);
+    letter-spacing: -0.01em;
+  }
+
+  .aside-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .aside-list li {
+    font-size: 0.78rem;
+    color: var(--fog-light);
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+    line-height: 1.5;
+  }
+
+  .aside-list li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .cta-section {
+    background: var(--slate);
+    padding: 8rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: var(--line);
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    width: 60rem;
+    height: 60rem;
+    border-radius: 50%;
+    border: 1px solid rgba(212,165,116,0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cta-section::after {
+    content: '';
+    position: absolute;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    border: 1px solid rgba(212,165,116,0.06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cta-section h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    max-width: 18ch;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-sub {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--fog-light);
+    font-style: italic;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+    max-width: 42ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.68rem;
+    color: var(--fog);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer .logo { height: 24px; }
+  footer a { color: var(--fog); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.25rem; }
+    nav ul { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 4rem 1.25rem; border-right: none; }
+    .section { padding: 5rem 1.25rem; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .problem-item { border-right: none !important; border-bottom: var(--line) !important; }
+    .problem-item:last-child { border-bottom: none !important; }
+    .services-wrap { grid-template-columns: 1fr; }
+    .services-sidebar { border-right: none; padding-right: 0; margin-bottom: 3rem; }
+    .service-cards { padding-left: 0; }
+    .service-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
+    .service-price { text-align: left; }
+    .process-steps { grid-template-columns: 1fr; }
+    .process-step { border-right: none; border-bottom: var(--line); }
+    .process-step:last-child { border-bottom: none; }
+    .who-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-aside { position: static; padding: 2.5rem; }
+    .cta-section { padding: 5rem 1.25rem; }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.25rem; }
+  }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">
+    <img src="logo-horizontal-dark.svg" alt="Clearline RevOps"/>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#who">Who It's For</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">Book a Call</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Revenue Operations · Professional Services</div>
+    <h1>Fix your revenue<br/><em>machine.</em><br/>Keep it fixed.</h1>
+    <p class="hero-sub">AI-powered RevOps audits and implementation for consulting firms tired of losing deals to process gaps, leaky pipelines, and disconnected systems.</p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn-primary">Get Your Revenue Scan →</a>
+      <a href="#services" class="btn-ghost">See the work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-block">
+      <div class="stat-num">67%</div>
+      <div class="stat-label">of B2B firms can't identify their biggest revenue leak</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">3.2×</div>
+      <div class="stat-label">growth for firms with aligned RevOps vs. without</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">14 days</div>
+      <div class="stat-label">average time to your first implemented fix</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>Pipeline visibility</span>
+    <span>HubSpot implementation</span>
+    <span>Sales process design</span>
+    <span>CRM cleanup</span>
+    <span>Revenue forecasting</span>
+    <span>Lead scoring</span>
+    <span>Onboarding automation</span>
+    <span>Reporting dashboards</span>
+    <span>Pipeline visibility</span>
+    <span>HubSpot implementation</span>
+    <span>Sales process design</span>
+    <span>CRM cleanup</span>
+    <span>Revenue forecasting</span>
+    <span>Lead scoring</span>
+    <span>Onboarding automation</span>
+    <span>Reporting dashboards</span>
+  </div>
+</div>
+
+<section class="section fade-up">
+  <div class="section-label">The problem <span>// 01</span></div>
+  <h2>Your pipeline is full of<br/><em>invisible holes.</em></h2>
+  <p class="lead-para">Most consulting firms grew by doing great work -- not by building a revenue system. The result is a mess of spreadsheets, gut-feel forecasting, a CRM nobody trusts, and a sales process that lives in a founder's head.</p>
+
+  <div class="problem-grid">
+    <div class="problem-item">
+      <div class="problem-num">01</div>
+      <div class="problem-title">Deals die in silence</div>
+      <p class="problem-desc">No visibility into why proposals go cold. No follow-up sequence. No data on where qualified buyers drop out. Just vibes and hope.</p>
+    </div>
+    <div class="problem-item">
+      <div class="problem-num">02</div>
+      <div class="problem-title">CRM is a glorified contact list</div>
+      <p class="problem-desc">Adoption is low. Data is stale. Your team logs calls inconsistently, if at all. Leadership can't forecast revenue with any confidence.</p>
+    </div>
+    <div class="problem-item">
+      <div class="problem-num">03</div>
+      <div class="problem-title">Marketing and sales aren't speaking</div>
+      <p class="problem-desc">Leads come in and fall into a void. No handoff process, no qualification framework, no feedback loop. Revenue is siloed by accident.</p>
+    </div>
+    <div class="problem-item">
+      <div class="problem-num">04</div>
+      <div class="problem-title">You're flying blind on metrics</div>
+      <p class="problem-desc">Win rate, sales cycle length, average deal size -- you have a rough guess, not a number. You can't optimize what you can't measure.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-up" id="services">
+  <div class="section-label">Services <span>// 02</span></div>
+  <div class="services-wrap">
+    <div class="services-sidebar">
+      <h2>Three ways<br/>to work<br/><em>together.</em></h2>
+      <p class="lead-para">Every engagement starts with a scoped audit. No retainers before we know what we're fixing. Everything is documented, async-friendly, and built for your team to own long-term.</p>
+    </div>
+    <div class="service-cards">
+
+```
+  <div class="service-card">
+    <div class="service-tag">Entry point</div>
+    <div>
+      <div class="service-name">The Revenue Scan</div>
+      <p class="service-desc">A comprehensive AI-assisted audit of your full revenue operation -- pipeline, CRM, handoffs, messaging, and metrics. You get a prioritized fix list with exact next steps, not a 40-page deck nobody reads.</p>
+      <div class="service-includes">
+        <span class="service-pill">CRM audit</span>
+        <span class="service-pill">Pipeline analysis</span>
+        <span class="service-pill">ICP review</span>
+        <span class="service-pill">Fix list</span>
+        <span class="service-pill">90-min debrief</span>
+      </div>
+    </div>
+    <div class="service-price">
+      <div class="price-num">$1,200</div>
+      <span class="price-unit">one-time</span>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-tag">Most chosen</div>
+    <div>
+      <div class="service-name">The Fix Sprint</div>
+      <p class="service-desc">Take the top 3 revenue leaks identified in your audit and actually fix them. CRM restructure, pipeline stage build-out, lead scoring model, follow-up sequences -- done in 30 days. Async by default, calls when it matters.</p>
+      <div class="service-includes">
+        <span class="service-pill">Everything in Scan</span>
+        <span class="service-pill">CRM rebuild</span>
+        <span class="service-pill">Automation setup</span>
+        <span class="service-pill">Playbook docs</span>
+        <span class="service-pill">Team training</span>
+      </div>
+    </div>
+    <div class="service-price">
+      <div class="price-num">$4,500</div>
+      <span class="price-unit">project</span>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-tag">Ongoing</div>
+    <div>
+      <div class="service-name">RevOps on Retainer</div>
+      <p class="service-desc">Fractional RevOps leadership for firms that need ongoing optimization, reporting, and strategy without a full-time hire. Monthly cadence, async Slack access, and quarterly roadmap reviews.</p>
+      <div class="service-includes">
+        <span class="service-pill">Pipeline review</span>
+        <span class="service-pill">Async support</span>
+        <span class="service-pill">Quarterly roadmap</span>
+        <span class="service-pill">Metrics dashboard</span>
+        <span class="service-pill">Advisory</span>
+      </div>
+    </div>
+    <div class="service-price">
+      <div class="price-num">$2,500</div>
+      <span class="price-unit">/ month</span>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<section class="section fade-up" id="process">
+  <div class="section-label">How it works <span>// 03</span></div>
+  <h2>From first call to<br/><em>first fix</em> in 14 days.</h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Discovery Call</div>
+      <p class="step-desc">30 minutes. We map your current revenue motion, tools, team, and where things feel broken. No pitch, no fluff.</p>
+      <div class="step-time">Day 1</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Data Access</div>
+      <p class="step-desc">You share CRM access, pipeline data, and relevant docs. Everything handled securely with a signed NDA.</p>
+      <div class="step-time">Day 2–3</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">AI Audit</div>
+      <p class="step-desc">Our audit framework runs against your data. Patterns, gaps, and leaks surface in days, not weeks.</p>
+      <div class="step-time">Day 4–8</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Debrief & Plan</div>
+      <p class="step-desc">A prioritized roadmap delivered before the call. We walk findings, answer questions, agree on what to fix first.</p>
+      <div class="step-time">Day 10–12</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">05</div>
+      <div class="step-title">Implementation</div>
+      <p class="step-desc">Fix Sprint begins immediately after. Systems rebuilt, automations running, team trained before month end.</p>
+      <div class="step-time">Day 14+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-up" id="who">
+  <div class="section-label">Who this is for <span>// 04</span></div>
+  <h2>Built for firms that know<br/>they have <em>more to capture.</em></h2>
+  <div class="who-grid">
+    <div class="who-card">
+      <span class="who-icon">-- 01</span>
+      <div class="who-type">Consulting Firms</div>
+      <p class="who-desc">5–50 person shops doing great work but struggling to scale revenue predictably. You need your pipeline to reflect reality, not wishful thinking.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">-- 02</span>
+      <div class="who-type">Managed Service Providers</div>
+      <p class="who-desc">MSPs with strong delivery teams and weak sales infrastructure. Your close rate should be higher. Your renewal process shouldn't depend on one person.</p>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">-- 03</span>
+      <div class="who-type">Professional Services</div>
+      <p class="who-desc">Architecture, engineering, legal, accounting -- any billable-hours firm that has never thought in terms of a revenue system and is starting to feel the ceiling.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-up" id="about">
+  <div class="section-label">About <span>// 05</span></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Operator-built.<br/><em>Not consultant-imagined.</em></h2>
+      <p>Clearline was built by someone who has sat inside professional services firms -- not just audited them from the outside. I've built and exited businesses, run digital marketing for consulting firms, and spent years building the systems that make revenue operations actually work in the real world.</p>
+      <p>That means I know the difference between a <strong>recommendation that looks good in a deck</strong> and one that your team will actually use on Monday morning. Everything I deliver is built to be used, not filed away.</p>
+      <p>The AI layer isn't a gimmick -- it's what allows me to do in 10 days what a traditional consultant takes 90 days to do, at a fraction of the cost, with more precision.</p>
+      <div class="about-credentials">
+        <div class="cred-item">
+          <strong>Consulting & Marketing</strong>
+          B2B professional services, Deltek Vantagepoint ecosystem
+        </div>
+        <div class="cred-item">
+          <strong>Systems-Oriented Operator</strong>
+          Founder background with emphasis on revenue infrastructure and growth ops
+        </div>
+        <div class="cred-item">
+          <strong>HubSpot RevOps</strong>
+          Hands-on implementation across CRMs and marketing automation stacks
+        </div>
+      </div>
+    </div>
+    <div class="about-aside">
+      <div class="aside-label">The honest version</div>
+      <div class="aside-quote">"Most RevOps consultants give you a roadmap. I give you a running car."</div>
+      <ul class="aside-list">
+        <li>Built for async -- most of the work happens without you in it</li>
+        <li>Priced for professional services firms, not enterprise</li>
+        <li>Fixed-scope engagements -- no scope creep, no surprise invoices</li>
+        <li>You own everything -- no dependency on me continuing</li>
+        <li>AI-augmented delivery -- faster, cheaper, more data-driven</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section fade-up" id="cta">
+  <h2>Ready to see where your<br/><em>revenue is leaking?</em></h2>
+  <p class="cta-sub">Book a free 30-minute discovery call. No pitch. Just an honest look at your revenue motion and whether we're the right fit.</p>
+  <div class="cta-actions">
+    <a href="https://cal.com" class="btn-primary" target="_blank">Book Discovery Call →</a>
+    <a href="mailto:hello@clearlinerevops.com" class="btn-ghost">Or email directly</a>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo">
+    <img src="logo-horizontal-dark.svg" alt="Clearline RevOps"/>
+  </a>
+  <div>Calgary, AB · Available across North America</div>
+  <div>© 2026 Clearline RevOps</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

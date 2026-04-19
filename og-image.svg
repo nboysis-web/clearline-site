@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e14"/>
+      <stop offset="100%" stop-color="#141925"/>
+    </linearGradient>
+    <pattern id="ogGrid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1a2030" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <rect width="1200" height="630" fill="url(#ogGrid)" opacity="0.5"/>
+
+  <!-- Border frame -->
+
+  <rect x="60" y="60" width="1080" height="510" fill="none" stroke="#1a2030" stroke-width="1"/>
+
+  <!-- Corner accents -->
+
+  <line x1="60" y1="60" x2="100" y2="60" stroke="#d4a574" stroke-width="2"/>
+  <line x1="60" y1="60" x2="60" y2="100" stroke="#d4a574" stroke-width="2"/>
+  <line x1="1100" y1="570" x2="1140" y2="570" stroke="#d4a574" stroke-width="2"/>
+  <line x1="1140" y1="530" x2="1140" y2="570" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- Header -->
+
+  <text x="120" y="140" font-family="'Courier New', monospace" font-size="14" fill="#d4a574" letter-spacing="4">
+    C L E A R L I N E
+  </text>
+  <line x1="120" y1="155" x2="220" y2="155" stroke="#d4a574" stroke-width="1"/>
+
+  <!-- Main headline -->
+
+  <text x="120" y="280" font-family="Georgia, serif" font-size="72" font-weight="400" fill="#f5f3ee" letter-spacing="-2">
+    Fix your revenue
+  </text>
+  <text x="120" y="360" font-family="Georgia, serif" font-size="72" font-weight="400" font-style="italic" fill="#d4a574" letter-spacing="-2">
+    machine.
+  </text>
+
+  <!-- Divider -->
+
+  <line x1="120" y1="420" x2="180" y2="420" stroke="#2a3142" stroke-width="1"/>
+
+  <!-- Subline -->
+
+  <text x="120" y="470" font-family="Georgia, serif" font-size="22" fill="#a8b2c4" font-style="italic">
+    AI-powered RevOps audits and implementation
+  </text>
+  <text x="120" y="502" font-family="Georgia, serif" font-size="22" fill="#a8b2c4" font-style="italic">
+    for B2B professional services firms.
+  </text>
+
+  <!-- Bottom URL -->
+
+  <text x="120" y="540" font-family="'Courier New', monospace" font-size="13" fill="#7a8599" letter-spacing="2">
+    C L E A R L I N E R E V O P S . C O M
+  </text>
+</svg>
