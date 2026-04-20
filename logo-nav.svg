@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <!-- Monogram bracket -->
+  <g transform="translate(10, 20)">
+    <path d="M 0 0 L 0 40 L 30 40" stroke="#d4a574" stroke-width="2.5" fill="none" stroke-linecap="square"/>
+    <path d="M 0 0 L 30 0" stroke="#d4a574" stroke-width="2.5" fill="none" stroke-linecap="square"/>
+    <line x1="10" y1="12" x2="22" y2="12" stroke="#d4a574" stroke-width="2.5"/>
+    <line x1="10" y1="20" x2="18" y2="20" stroke="#d4a574" stroke-width="2.5" opacity="0.5"/>
+    <line x1="10" y1="28" x2="22" y2="28" stroke="#d4a574" stroke-width="2.5"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="60" y1="28" x2="60" y2="52" stroke="#2a3142" stroke-width="1"/>
+
+  <!-- Wordmark — larger, no tagline -->
+  <text x="78" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="400" fill="#f5f3ee" letter-spacing="-0.5">
+    Clearline
+  </text>
+</svg>
