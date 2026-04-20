@@ -81,8 +81,12 @@
     z-index: 100;
   }
 
-  .logo { height: 32px; display: flex; align-items: center; }
+ .logo { height: 42px; display: flex; align-items: center; }
   .logo img { height: 100%; width: auto; }
+
+  @media (max-width: 900px) {
+    .logo { height: 32px; }
+  }
 
   nav ul {
     list-style: none;
